@@ -42,7 +42,7 @@ export default {
           this.replyshow = true
       },
       remove(){ 
-           return  this.$store.dispatch('removeComment',this.comment.ID)
+           return  this.$store.commit('removeComment',this.comment.ID)
       },
       hidereply(){
           this.replyshow = false

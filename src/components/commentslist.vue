@@ -27,6 +27,7 @@ export default {
     commentThread(){
       return this.$store.getters.commentThread;
     },
+    // order comments
     orderedComments(){
       var comms = []
     if (this.commentFilter ===  'newest first' ){
@@ -42,7 +43,8 @@ export default {
     comms =  this.commentThread.slice().reverse((a,b) => a.body - b.body);
     }
     return comms
-    }
+    },
+    
   },
   data(){
     return {

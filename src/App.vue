@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <commentbox></commentbox>
+    <commentbox :key='nextID' ></commentbox>
     <commentslist></commentslist>
     <commentsTrash></commentsTrash>
   </div>
@@ -17,6 +17,17 @@ export default {
    commentslist,
    commentbox,
    commentsTrash,
+  },
+  computed:{
+     // get new id
+        nextID(){
+        return this.$store.getters.nextID
+        },
+  },
+  methods:{
+    updatebox(){
+
+    }
   }
 }
 </script>

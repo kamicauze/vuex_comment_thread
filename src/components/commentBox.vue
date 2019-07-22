@@ -1,5 +1,6 @@
 <template>
     <div class="comment-box">
+
         <textarea  v-model="comment.body"  maxlength="20"  @input="LengthCheck($event.target.value)"></textarea>
         <span v-if="show" style="color: red">{{remainingCharacters}}</span>
         <button @click="prepareComment()">Save</button>
@@ -8,12 +9,12 @@
 <script>
 
 export default {
-    props:["parentID"],
+    props:["parentID","body"],
      data(){
       return{
         comment:{
-                ID:'',
-                body:'',
+                ID:this.ID,
+                body:this.body,
         
                 createdAt:'',
                 timestamp:'',
@@ -36,6 +37,10 @@ export default {
                 return this.maxCharacters - this.comment.body.length  +" characters remaining";
             }
         },
+    },watch : {
+        // nextID(val){
+          
+        // }
     },
       methods:{
         //   prepare comment before saving
@@ -66,8 +71,9 @@ export default {
           },
         //   save comment to store
           saveComment(){
-              this.$store.dispatch('saveCommenttostore',this.comment)
+              this.$store.commit('saveComment',this.comment)
               this.$emit('hideShowreply')
+             
           },
         // check if user is typing  
           LengthCheck(value){
