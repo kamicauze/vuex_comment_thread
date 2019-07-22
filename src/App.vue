@@ -1,27 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <commentbox></commentbox>
+    <commentslist></commentslist>
+    <commentsTrash></commentsTrash>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import commentbox from './components/commentBox.vue'
+import commentslist from './components/commentslist.vue'
+import commentsTrash from './components/commentTrash.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+   commentslist,
+   commentbox,
+   commentsTrash,
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
