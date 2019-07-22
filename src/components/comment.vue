@@ -57,7 +57,7 @@ export default {
         min-height:70px ;
         height: fit-content;
         box-sizing: border-box;
-        
+        border-left: 1px black dotted;
         margin: 10px;
         display: flex;
         flex-direction: column;
@@ -87,5 +87,6 @@ export default {
         background-color: pink;
         box-sizing: border-box;
         padding: 10px;
+        margin-left: -20px;
     }
 </style>
