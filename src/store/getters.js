@@ -1,10 +1,8 @@
- // crrete tree from flet json
+ // create tree from flat json
 const commentThread = state =>{
       
     var nest = (items, id = 0, link = 'parentID') =>
-    items
-      .filter(item => item[link] === id)
-      .map(item => ({ ...item, children: nest(items, item.ID) }));
+    items.filter(item => item[link] === id).map(item => ({ ...item, children: nest(items, item.ID) }));
   
      return  nest(state.comments)
   };
